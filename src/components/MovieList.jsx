@@ -25,6 +25,7 @@ function MovieList({ genreId, index_ }) {
   const sliderLeft = (element) => {
     element.scrollLeft -= screenWidth - 500;
   };
+
   return (
     <>
       <i className={`hidden md:block fa-solid fa-chevron-left absolute text-white text-[30px] mx-9 ${index_ % 3 == 0 ? "my-[77px]" : "my-[170px]"} cursor-pointer left-0`} onClick={() => sliderLeft(elementRef.current)}></i>

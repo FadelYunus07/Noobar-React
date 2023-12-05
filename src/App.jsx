@@ -7,6 +7,7 @@ import HomePage from "./pages/HomePage";
 import MoviePage from "./pages/MoviePage";
 import SeriesPage from "./pages/SeriesPage";
 import WatchlistPage from "./pages/WatchlistPage";
+import DetailComponent from "./components/DetailComponent";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/original" element={<OriginalPage />} />
         <Route path="/movie" element={<MoviePage />} />
         <Route path="/series" element={<SeriesPage />} />
+        <Route path="/details/:id" element={<DetailComponent />} />
       </Routes>
       <FooterComponent />
     </>
