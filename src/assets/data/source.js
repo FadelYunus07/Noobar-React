@@ -27,24 +27,12 @@ export const link = [
   },
   {
     id: 3,
-    path: "/watchlist",
-    text: "WATCHLIST",
-    icon: "fa-solid fa-plus",
-  },
-  {
-    id: 4,
-    path: "/original",
-    text: "ORIGINALS",
-    icon: "fa-solid fa-star",
-  },
-  {
-    id: 5,
     path: "/movie",
     text: "MOVIE",
     icon: "fa-solid fa-film",
   },
   {
-    id: 6,
+    id: 4,
     path: "/series",
     text: "SERIES",
     icon: "fa-solid fa-tv",
@@ -52,9 +40,9 @@ export const link = [
 ];
 
 export const companies = [
-  { id: 1, img: compG1, vid: compV1, title: "Disney" },
-  { id: 2, img: compG2, vid: compV2, title: "Pixar" },
-  { id: 4, img: compG3, vid: compV3, title: "Marvel" },
-  { id: 3, img: compG4, vid: compV4, title: "National Geographic" },
-  { id: 5, img: compG5, vid: compV5, title: "Star Wars" },
+  { id: 1, img: compG1, vid: compV1, link: "https://www.disney.com", title: "Disney" },
+  { id: 2, img: compG2, vid: compV2, link: "https://www.pixar.com", title: "Pixar" },
+  { id: 4, img: compG3, vid: compV3, link: "https://www.marvel.com", title: "Marvel" },
+  { id: 3, img: compG4, vid: compV4, link: "https://www.nationalgeographic.com", title: "National Geographic" },
+  { id: 5, img: compG5, vid: compV5, link: "https://www.starwars.com", title: "Star Wars" },
 ];

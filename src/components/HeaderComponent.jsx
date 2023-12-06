@@ -3,13 +3,16 @@ import logo from "../assets/image/Noobar color.svg";
 import avatar from "../assets/image/avatar.png";
 import { link } from "../assets/data/source";
 import HeaderItems from "./HeaderItems";
+import { Link } from "react-router-dom";
 
 function HeaderComponent() {
   const [toggle, setToggle] = useState(false);
   return (
     <div className="items-center flex justify-between mx-5">
       <div className="flex gap-8 md:gap-5 items-center p-5">
-        <img src={logo} className="w-[80px] md:w-[110px]" alt="Logo" />
+        <Link to={"/"}>
+          <img src={logo} className="w-[80px] md:w-[110px]" alt="Logo" />
+        </Link>
         <div className="hidden md:flex gap-8">
           {link.map((navlink) => (
             <HeaderItems name={navlink.text} icon={navlink.icon} link={navlink.path} />

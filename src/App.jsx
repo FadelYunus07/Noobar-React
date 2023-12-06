@@ -7,7 +7,8 @@ import HomePage from "./pages/HomePage";
 import MoviePage from "./pages/MoviePage";
 import SeriesPage from "./pages/SeriesPage";
 import WatchlistPage from "./pages/WatchlistPage";
-import DetailComponent from "./components/DetailComponent";
+import DetailMovieComponent from "./components/DetailMovieComponent";
+import DetailTvComponent from "./components/DetailTvComponent";
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
         <Route path="/original" element={<OriginalPage />} />
         <Route path="/movie" element={<MoviePage />} />
         <Route path="/series" element={<SeriesPage />} />
-        <Route path="/details/:id" element={<DetailComponent />} />
+        <Route path="/moviedetails/:id" element={<DetailMovieComponent />} />
+        <Route path="/tvdetails/:id" element={<DetailTvComponent />} />
       </Routes>
       <FooterComponent />
     </>

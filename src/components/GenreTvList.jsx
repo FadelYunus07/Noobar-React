@@ -1,8 +1,8 @@
 import React from "react";
-import TvList from "../components/TvList";
 import GenreList from "../constant/GenreList";
+import TvList from "./TvList";
 
-function SeriesPage() {
+function GenreTvList() {
   return (
     <div className="p-8 px-8 md:px-16">
       {GenreList.genre.map(
@@ -11,7 +11,7 @@ function SeriesPage() {
             <div>
               <h2
                 className="text-[20px] text-white 
-        font-bold border-l-blue-700 border-l-[5px] ps-4"
+                font-bold border-l-blue-700 border-l-[5px] ps-4"
               >
                 {items.name}
               </h2>
@@ -23,4 +23,4 @@ function SeriesPage() {
   );
 }
 
-export default SeriesPage;
+export default GenreTvList;

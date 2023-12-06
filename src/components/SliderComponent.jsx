@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import GlobalAPI from "../Services/GlobalAPI";
+import { Link } from "react-router-dom";
 
 function SliderComponent() {
   const BASE_IMG_URL = "https://image.tmdb.org/t/p/original/";
@@ -31,7 +32,11 @@ function SliderComponent() {
       <div className="flex overflow-x-auto px-16 py-4 w-full scrollbar-none scroll-smooth" ref={elementRef}>
         {movieList.map((popular, index) => {
           return (
-            <img src={BASE_IMG_URL + popular.backdrop_path} alt={popular.title} className="min-w-full md:h-[310px] object-cover mr-4 rounded-md object-right-top hover:border-[5px] border-gray-500 transition-all duration-100 ease-in" />
+            <div className="min-w-full md:h-[310px] object-cover mr-4 rounded-md object-center" key={popular.id}>
+              <Link to={`/details/${popular.id}`}>
+                <img src={BASE_IMG_URL + popular.backdrop_path} alt={popular.title} className="min-w-full md:h-[310px] object-cover mr-4 rounded-md object-center hover:border-[5px] border-gray-500 transition-all duration-100 ease-in" />
+              </Link>
+            </div>
           );
         })}
       </div>

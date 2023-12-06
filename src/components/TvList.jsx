@@ -1,22 +1,22 @@
 import React, { useEffect, useRef, useState } from "react";
 import GlobalAPI from "../Services/GlobalAPI";
-import MovieCard from "./MovieCard";
-import HrMovieCard from "./HrMovieCard";
 import { Link } from "react-router-dom";
+import HrTvCard from "./HrTvCard";
+import TvCard from "./TvCard";
 
-function MovieList({ genreId, index_ }) {
-  const [movieList, setMovieList] = useState([]);
+function TvList({ genreId, index_ }) {
+  const [tvList, setTvList] = useState([]);
   const elementRef = useRef();
   const screenWidth = window.innerWidth;
 
   useEffect(() => {
-    getMovieByGenreId();
+    getTvByGenreId();
   }, []);
 
-  const getMovieByGenreId = () => {
-    GlobalAPI.getMovieByGenreId(genreId).then((resp) => {
+  const getTvByGenreId = () => {
+    GlobalAPI.getTvByGenreId(genreId).then((resp) => {
       console.log(resp.data.results);
-      setMovieList(resp.data.results);
+      setTvList(resp.data.results);
     });
   };
 
@@ -34,16 +34,16 @@ function MovieList({ genreId, index_ }) {
 
   return (
     <>
-      {movieList.length > 0 && (
+      {tvList.length > 0 && (
         <>
           <i className={`hidden md:block fa-solid fa-chevron-left absolute text-white text-[30px] mx-9 ${index_ % 3 === 0 ? "my-[77px]" : "my-[170px]"} cursor-pointer left-0`} onClick={sliderLeft}></i>
           <i className={`hidden md:block fa-solid fa-chevron-right absolute text-white text-[30px] mx-9 ${index_ % 3 === 0 ? "my-[77px]" : "my-[170px]"} cursor-pointer right-0`} onClick={sliderRight}></i>
         </>
       )}
       <div ref={elementRef} className="flex overflow-x-auto py-5 w-full scroll-smooth scrollbar-none">
-        {movieList.map((item, index) => (
-          <Link to={`/moviedetails/${item.id}`} key={item.id}>
-            {index_ % 3 === 0 ? <HrMovieCard movie={item} /> : <MovieCard movie={item} />}
+        {tvList.map((item, index) => (
+          <Link to={`/tvdetails/${item.id}`} key={item.id}>
+            {index_ % 3 === 0 ? <HrTvCard movie={item} /> : <TvCard movie={item} />}
           </Link>
         ))}
       </div>
@@ -51,4 +51,4 @@ function MovieList({ genreId, index_ }) {
   );
 }
 
-export default MovieList;
+export default TvList;
