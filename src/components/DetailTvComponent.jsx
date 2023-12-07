@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import GlobalAPI from "../Services/GlobalAPI";
-import GenreMovieList from "./GenreMovieList";
 import GenreTvList from "./GenreTvList";
+import ScrollToTop from "./ScrollToTop";
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/original";
 
 const EmbeddedVideoModal = ({ embedUrl, onClose }) => {
@@ -27,6 +27,7 @@ function DetailTvComponent() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     getTvDetails();
     getTvTrailer();
   }, [id]);
@@ -68,10 +69,10 @@ function DetailTvComponent() {
   };
 
   return (
-    <div className="relative">
-      <div className="absolute z-10 top-0 left-0 w-full h-[500px] bg-black opacity-80"></div>
+    <div className="relative pt-[80px]">
+      <div className="absolute z-10 top-20 left-0 w-full h-[500px] bg-black opacity-80"></div>
       <img src={IMAGE_BASE_URL + detail.backdrop_path} className="w-full h-[500px] object-cover object-left-top" alt={detail.title} />
-      <div className="grid grid-cols-4 gap-4  absolute top-0 left-0 z-10 h-[100%]">
+      <div className="grid grid-cols-4 gap-4  absolute top-20 left-0 z-10 h-[100%]">
         <img src={IMAGE_BASE_URL + detail.poster_path} className="w-[260px] ms-11 mt-[18%] rounded-lg object-cover" alt={detail.title} />
         <div className=" col-span-2 pt-10">
           <h1 className="text-[50px]">{detail.name}</h1>

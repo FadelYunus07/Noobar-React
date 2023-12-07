@@ -11,6 +11,7 @@ import compV2 from "../video/pixar.mp4";
 import compV3 from "../video/marvel.mp4";
 import compV4 from "../video/national-geographic.mp4";
 import compV5 from "../video/star-wars.mp4";
+import SearchComponent from "../../components/SearchComponent";
 
 export const link = [
   {
@@ -21,18 +22,12 @@ export const link = [
   },
   {
     id: 2,
-    path: "#",
-    text: "SEARCH",
-    icon: "fa-solid fa-magnifying-glass",
-  },
-  {
-    id: 3,
     path: "/movie",
     text: "MOVIE",
     icon: "fa-solid fa-film",
   },
   {
-    id: 4,
+    id: 3,
     path: "/series",
     text: "SERIES",
     icon: "fa-solid fa-tv",

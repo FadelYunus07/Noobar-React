@@ -4,7 +4,8 @@ import GenreList from "../constant/GenreList";
 
 function SeriesPage() {
   return (
-    <div className="p-8 px-8 md:px-16">
+    <div className="p-8 px-8 md:px-16 pt-[110px]">
+      <h1 className="text-[30px] font-bold text-center">TV SERIES</h1>
       {GenreList.genre.map(
         (items, index) =>
           index <= 4 && (

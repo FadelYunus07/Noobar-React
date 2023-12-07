@@ -5,7 +5,7 @@ import GenreMovieList from "../components/GenreMovieList";
 
 function HomePage() {
   return (
-    <div>
+    <div className="pt-[90px]">
       <SliderComponent />
       <CompanieComponent />
       <GenreMovieList />

@@ -33,7 +33,7 @@ function SliderComponent() {
         {movieList.map((popular, index) => {
           return (
             <div className="min-w-full md:h-[310px] object-cover mr-4 rounded-md object-center" key={popular.id}>
-              <Link to={`/details/${popular.id}`}>
+              <Link to={`/moviedetails/${popular.id}`}>
                 <img src={BASE_IMG_URL + popular.backdrop_path} alt={popular.title} className="min-w-full md:h-[310px] object-cover mr-4 rounded-md object-center hover:border-[5px] border-gray-500 transition-all duration-100 ease-in" />
               </Link>
             </div>

@@ -6,17 +6,18 @@ import OriginalPage from "./pages/OriginalPage";
 import HomePage from "./pages/HomePage";
 import MoviePage from "./pages/MoviePage";
 import SeriesPage from "./pages/SeriesPage";
-import WatchlistPage from "./pages/WatchlistPage";
 import DetailMovieComponent from "./components/DetailMovieComponent";
 import DetailTvComponent from "./components/DetailTvComponent";
+import SearchResultsPage from "./pages/SearchResultPage";
+import SearchComponent from "./components/SearchComponent";
 
 function App() {
   return (
     <>
       <HeaderComponent />
       <Routes>
+        <Route path="/search" element={<SearchResultsPage />} />
         <Route path="/" element={<HomePage />} />
-        <Route path="/watchlist" element={<WatchlistPage />} />
         <Route path="/original" element={<OriginalPage />} />
         <Route path="/movie" element={<MoviePage />} />
         <Route path="/series" element={<SeriesPage />} />

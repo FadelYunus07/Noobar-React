@@ -5,6 +5,7 @@ const api_key = "24659842891f0877b80e3c8d6a8a5bad";
 
 const movieBaseUrl = "https://api.themoviedb.org/3/discover/movie?api_key=" + api_key;
 const tvBaseUrl = "https://api.themoviedb.org/3/discover/tv?api_key=" + api_key;
+const searchBaseUrl = "https://api.themoviedb.org/3/search/multi?api_key=" + api_key;
 
 //   https://api.themoviedb.org/3/movie/popular?api_key=24659842891f0877b80e3c8d6a8a5bad
 
@@ -23,6 +24,8 @@ const getTvDetails = (id) => axios.get(tmdbBaseUrl + `tv/${id}?api_key=${api_key
 const getMovieTrailer = (id) => axios.get(tmdbBaseUrl + `movie/${id}/videos?api_key=${api_key}`);
 const getTvTrailer = (id) => axios.get(tmdbBaseUrl + `tv/${id}/videos?api_key=${api_key}`);
 
+const searchAll = (query) => axios.get(`${searchBaseUrl}&query=${encodeURIComponent(query)}`);
+
 export default {
   getPopularMovies,
   getMovieByGenreId,
@@ -31,4 +34,5 @@ export default {
   getTvDetails,
   getMovieTrailer,
   getTvTrailer,
+  searchAll,
 };
