@@ -1,5 +1,5 @@
 {
-  "homepage": "https://fadelyunus07.github.io/noobar-react",
+  "homepage": "https://fadelyunus07.github.io/noobar-react/",
   "name": "noobar",
   "private": true,
   "version": "1.0.0",
@@ -9,8 +9,8 @@
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "vite build -d build"
+    "predeploy": "vite build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "axios": "^1.6.2",

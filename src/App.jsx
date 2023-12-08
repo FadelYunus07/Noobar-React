@@ -1,7 +1,6 @@
-import image from "./assets/image/Noobar color.svg";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import HeaderComponent from "./components/HeaderComponent";
 import FooterComponent from "./components/FooterComponent";
-import { Routes, Route } from "react-router-dom";
 import OriginalPage from "./pages/OriginalPage";
 import HomePage from "./pages/HomePage";
 import MoviePage from "./pages/MoviePage";
@@ -13,7 +12,7 @@ import SearchComponent from "./components/SearchComponent";
 
 function App() {
   return (
-    <>
+    <Router>
       <HeaderComponent />
       <Routes>
         <Route path="/search" element={<SearchResultsPage />} />
@@ -25,7 +24,7 @@ function App() {
         <Route path="/tvdetails/:id" element={<DetailTvComponent />} />
       </Routes>
       <FooterComponent />
-    </>
+    </Router>
   );
 }
 
