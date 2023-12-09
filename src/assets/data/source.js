@@ -16,7 +16,7 @@ import SearchComponent from "../../components/SearchComponent";
 export const link = [
   {
     id: 1,
-    path: "/",
+    path: "",
     text: "HOME",
     icon: "fa-solid fa-home",
   },

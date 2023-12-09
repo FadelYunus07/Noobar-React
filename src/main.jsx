@@ -7,7 +7,7 @@ import ScrollToTop from "./components/ScrollToTop.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter basename="/noobar-react">
+    <BrowserRouter>
       <ScrollToTop />
       <App />
     </BrowserRouter>
