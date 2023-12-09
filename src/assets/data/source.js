@@ -16,19 +16,19 @@ import SearchComponent from "../../components/SearchComponent";
 export const link = [
   {
     id: 1,
-    path: "/noobar-react/",
+    path: "/",
     text: "HOME",
     icon: "fa-solid fa-home",
   },
   {
     id: 2,
-    path: "/noobar-react/movie",
+    path: "/movie",
     text: "MOVIE",
     icon: "fa-solid fa-film",
   },
   {
     id: 3,
-    path: "/noobar-react/series",
+    path: "/series",
     text: "SERIES",
     icon: "fa-solid fa-tv",
   },
