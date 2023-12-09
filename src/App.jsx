@@ -15,7 +15,7 @@ function App() {
   return (
     <div>
       <HeaderComponent />
-      <Routes>
+      <Routes basename="/noobar-react">
         <Route path="/search" element={<SearchResultsPage />} />
         <Route path="/" element={<HomePage />} />
         <Route path="/original" element={<OriginalPage />} />
