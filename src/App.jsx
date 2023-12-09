@@ -13,7 +13,7 @@ import SearchComponent from "./components/SearchComponent";
 
 function App() {
   return (
-    <>
+    <div>
       <HeaderComponent />
       <Routes>
         <Route path="/search" element={<SearchResultsPage />} />
@@ -25,7 +25,7 @@ function App() {
         <Route path="/tvdetails/:id" element={<DetailTvComponent />} />
       </Routes>
       <FooterComponent />
-    </>
+    </div>
   );
 }
 
