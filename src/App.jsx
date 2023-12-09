@@ -18,7 +18,6 @@ function App() {
       <Routes basename="/noobar-react">
         <Route path="/search" element={<SearchResultsPage />} />
         <Route path="/" element={<HomePage />} />
-        <Route path="/original" element={<OriginalPage />} />
         <Route path="/movie" element={<MoviePage />} />
         <Route path="/series" element={<SeriesPage />} />
         <Route path="/moviedetails/:id" element={<DetailMovieComponent />} />
