@@ -12,17 +12,17 @@ import SearchResultsPage from "./pages/SearchResultPage";
 import SearchComponent from "./components/SearchComponent";
 
 function App() {
+  const pathbase = "/noobar-react/";
   return (
     <div>
       <HeaderComponent />
-      <Routes basename="/noobar-react/">
+      <Routes>
         <Route path="/search" element={<SearchResultsPage />} />
-        <Route path="/" element={<HomePage />} />
-        <Route path="/original" element={<OriginalPage />} />
-        <Route path="/movie" element={<MoviePage />} />
-        <Route path="/series" element={<SeriesPage />} />
-        <Route path="/moviedetails/:id" element={<DetailMovieComponent />} />
-        <Route path="/tvdetails/:id" element={<DetailTvComponent />} />
+        <Route path={pathbase} element={<HomePage />} />
+        <Route path={`${pathbase}/movie`} element={<MoviePage />} />
+        <Route path={`${pathbase}/series`} element={<SeriesPage />} />
+        <Route path={`${pathbase}/moviedetails/:id`} element={<DetailMovieComponent />} />
+        <Route path={`${pathbase}/tvdetails/:id`} element={<DetailTvComponent />} />
       </Routes>
       <FooterComponent />
     </div>
