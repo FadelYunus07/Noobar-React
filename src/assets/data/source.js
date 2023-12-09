@@ -22,13 +22,13 @@ export const link = [
   },
   {
     id: 2,
-    path: "/movie",
+    path: "movie",
     text: "MOVIE",
     icon: "fa-solid fa-film",
   },
   {
     id: 3,
-    path: "/series",
+    path: "series",
     text: "SERIES",
     icon: "fa-solid fa-tv",
   },
