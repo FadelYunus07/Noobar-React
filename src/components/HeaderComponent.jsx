@@ -26,7 +26,7 @@ function HeaderComponent() {
         </Link>
         <div className="hidden md:flex gap-8">
           {link.map((navlink) => (
-            <HeaderItems key={navlink.id} name={navlink.text} icon={navlink.icon} link={navlink.path} />
+            <HeaderItems name={navlink.text} icon={navlink.icon} link={navlink.path} />
           ))}
           <div onClick={toggleSearch}>
             <h1 className="text-white text-[16px] mt-2 font-semibold gap-3 flex items-center cursor-pointer">
@@ -35,9 +35,9 @@ function HeaderComponent() {
           </div>
         </div>
         <div className="flex md:hidden gap-0 sm:gap-8">
-          {link.map((navlink, index) => index < 3 && <HeaderItems key={navlink.id} name={""} icon={navlink.icon} link={navlink.path} />)}
+          {link.map((navlink, index) => index < 3 && <HeaderItems name={""} icon={navlink.icon} link={navlink.path} />)}
           <div className="md:hidden" onClick={() => setToggle(!toggle)}>
-            <HeaderItems key={navlink.id} name={""} icon={"fa fa-ellipsis-v"} link={"#"} />
+            <HeaderItems name={""} icon={"fa fa-ellipsis-v"} link={"#"} />
             <>
               {toggle ? (
                 <>
