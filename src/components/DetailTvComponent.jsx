@@ -13,7 +13,7 @@ const EmbeddedVideoModal = ({ embedUrl, onClose }) => {
           <p className="text-center">&times;</p>
         </span>
         <div className="video-container">
-          <iframe title="YouTube Video" width="560" height="315" src={embedUrl} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+          <iframe className="w-[310px] h-[175px] md:w-[560px] md:h-[315px]" title="YouTube Video" src={embedUrl} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
         </div>
       </div>
     </div>
@@ -72,7 +72,7 @@ function DetailTvComponent() {
     <div className="relative pt-[80px]">
       <div className="absolute z-10 top-20 left-0 w-full h-[500px] bg-black opacity-80"></div>
       <img src={IMAGE_BASE_URL + detail.backdrop_path} className="w-full h-[200px] md:h-[500px] object-cover object-left-top" alt={detail.title} />
-      <div className="grid grid-cols-4 gap-4 absolute top-20 mx-auto z-10 h-[100%]">
+      <div className="grid grid-cols-4 gap-4 absolute top-12 mx-auto z-10 h-[100%]">
         <img src={IMAGE_BASE_URL + detail.poster_path} className="w-[260px] ms-2 md:ms-11 mt-[55px] md:mt-[18%] rounded-lg object-cover" alt={detail.title} />
         <div className="col-span-2 pt-10">
           <h1 className="text-[15px] md:text-[50px]">{detail.name}</h1>
@@ -108,7 +108,7 @@ function DetailTvComponent() {
           {/* Embedded video modal */}
         </div>
       </div>
-      <div className="relative z-20 w-full h-full">
+      <div className="relative z-90 w-full h-full">
         <GenreTvList />
       </div>
     </div>
