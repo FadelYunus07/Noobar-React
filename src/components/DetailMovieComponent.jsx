@@ -9,7 +9,7 @@ const EmbeddedVideoModal = ({ embedUrl, onClose }) => {
   return (
     <div className="modal">
       <div>
-        <div className="video-container fixed top-16 left-0 right-0 bottom-10 mt-[15%] z-[99] mx-auto sm:left-auto md:left-0 w-[280px] h-[175px] md:w-[560px] md:h-[315px]">
+        <div className="video-container fixed top-16 left-0 right-0 bottom-10 mt-[0%] md:mt-[5%] z-[99] mx-auto sm:left-auto md:left-0 w-[280px] h-[175px] md:w-[560px] md:h-[315px]">
           <button onClick={onClose} className="cursor-pointer w-[39px] h-[39px] bg-white z-[100] text-center text-red-400 font-bold border-red-600 rounded-full md:p-2">
             x
           </button>
