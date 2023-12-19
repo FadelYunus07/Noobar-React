@@ -71,23 +71,23 @@ function DetailMovieComponent() {
   return (
     <div className="relative pt-[80px]">
       <div className="absolute z-10 top-20 left-0 w-full h-[500px] bg-black opacity-80"></div>
-      <img src={IMAGE_BASE_URL + detail.backdrop_path} className="w-full h-[500px] object-cover object-left-top" alt={detail.title} />
-      <div className="grid grid-cols-4 gap-4  absolute top-20 left-0 z-10 h-[100%]">
+      <img src={IMAGE_BASE_URL + detail.backdrop_path} className="w-full h-[200px] md:h-[500px] object-cover object-left-top" alt={detail.title} />
+      <div className="grid grid-cols-4 gap-4 absolute top-20 mx-auto z-10 h-[100%]">
         <img src={IMAGE_BASE_URL + detail.poster_path} className="w-[260px] ms-2 md:ms-11 mt-[55px] md:mt-[18%] rounded-lg object-cover" alt={detail.title} />
         <div className="col-span-2 pt-10">
-          <h1 className="text-[20px] md:text-[50px]">{detail.title}</h1>
-          <p className="text-[15px] md:text-[30px]">{detail.tagline}</p>
-          <div className="flex gap-5 mt-5">
-            <p className="text-[10px] md:text-[16px] self-center">
-              <i className="fa fa-user me-3"></i>
+          <h1 className="text-[15px] md:text-[50px]">{detail.title}</h1>
+          <p className="text-[10px] md:text-[30px]">{detail.tagline}</p>
+          <div className="flex gap-2 mt-0 md:mt-5">
+            <p className="text-[6px] md:text-[16px] self-center">
+              <i className="fa fa-user me-2 md:me-3"></i>
               {detail.popularity}
             </p>
-            <p className="text-[10px] md:text-[16px] self-center">
-              <i className="fa fa-usd me-3"></i>
+            <p className="text-[6px] md:text-[16px] self-center">
+              <i className="fa fa-usd me-2 md:me-3"></i>
               {detail.budget && detail.budget.toLocaleString()}
             </p>
             {videoKey && (
-              <button onClick={handlePlayTrailer} className="w-[60px] md:w-fit bg-blue-500 text-[10px] md:text-[14px] text-white py-2 px-4 rounded-md">
+              <button onClick={handlePlayTrailer} className="self-center bg-blue-500 text-[6px] md:text-[14px] text-white py-2 px-1 md:py-4 rounded-md">
                 Play Trailer
               </button>
             )}
@@ -95,17 +95,17 @@ function DetailMovieComponent() {
           {detail.genres && (
             <ul className="flex">
               {detail.genres.map((genre) => (
-                <li className="m-1 md:m-2 p-0 md:p-3 text-center font-bold text-[10px] md:text-[12px]" key={genre.id}>
+                <li className="m-1 md:m-2 p-0 md:p-3 text-center font-bold text-[6px] md:text-[12px]" key={genre.id}>
                   {genre.name}
                 </li>
               ))}
             </ul>
           )}
+          <p className="absolute me-5 z-[10] text-justify md:text-[16px] text-[6px]">{detail.overview}</p>
           {/* Button to play the trailer */}
-          <p className="text-justify md:text[14px] text-[10px]">{detail.overview}</p>
 
-          {/* Embedded video modal */}
           <div className="absolute top-[6%] left-[2%] md:left-[25%] z-[99]">{isModalOpen && <EmbeddedVideoModal embedUrl={`https://www.youtube.com/embed/${videoKey}`} onClose={handleCloseModal} />}</div>
+          {/* Embedded video modal */}
         </div>
       </div>
       <div className="relative z-20 w-full h-full">
