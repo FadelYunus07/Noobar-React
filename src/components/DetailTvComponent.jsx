@@ -8,12 +8,12 @@ const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/original";
 const EmbeddedVideoModal = ({ embedUrl, onClose }) => {
   return (
     <div className="modal">
-      <div className="modal-content">
-        <span className="close absolute top-2 right-4 rounded-full bg-white w-[5.4%] font-bold text-lg border-[2px] border-red-600 text-red-600 cursor-pointer" onClick={onClose}>
-          <p className="text-center">&times;</p>
-        </span>
-        <div className="video-container">
-          <iframe className="w-[310px] h-[175px] md:w-[560px] md:h-[315px]" title="YouTube Video" src={embedUrl} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+      <div>
+        <div className="video-container fixed top-16 left-0 right-0 bottom-10 mt-[15%] z-[99] mx-auto sm:left-auto md:left-0 w-[280px] h-[175px] md:w-[560px] md:h-[315px]">
+          <button onClick={onClose} className="cursor-pointer w-[39px] h-[39px] bg-white z-[100] text-center text-red-400 font-bold border-red-600 rounded-full md:p-2">
+            x
+          </button>
+          <iframe className="w-full h-full" title="YouTube Video" src={embedUrl} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
         </div>
       </div>
     </div>
@@ -104,7 +104,7 @@ function DetailTvComponent() {
           <p className="absolute me-5 z-[10] text-justify md:text-[16px] text-[6px]">{detail.overview}</p>
           {/* Button to play the trailer */}
 
-          <div className="absolute top-[6%] left-[2%] md:left-[25%] z-[99]">{isModalOpen && <EmbeddedVideoModal embedUrl={`https://www.youtube.com/embed/${videoKey}`} onClose={handleCloseModal} />}</div>
+          <div>{isModalOpen && <EmbeddedVideoModal embedUrl={`https://www.youtube.com/embed/${videoKey}`} onClose={handleCloseModal} />}</div>
           {/* Embedded video modal */}
         </div>
       </div>

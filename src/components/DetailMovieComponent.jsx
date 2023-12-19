@@ -8,12 +8,12 @@ const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/original";
 const EmbeddedVideoModal = ({ embedUrl, onClose }) => {
   return (
     <div className="modal">
-      <div className="modal-content">
-        <span className="close absolute -top-1 -right-1 md:-top-2 md:-right-4 rounded-full bg-white w-[5.4%] font-bold text-sm md:text-lg border-[2px] border-red-600 text-red-600 cursor-pointer" onClick={onClose}>
-          <p className="text-center">&times;</p>
-        </span>
-        <div className="video-container">
-          <iframe className="w-[310px] h-[175px] md:w-[560px] md:h-[315px]" title="YouTube Video" src={embedUrl} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+      <div>
+        <div className="video-container fixed top-16 left-0 right-0 bottom-10 mt-[15%] z-[99] mx-auto sm:left-auto md:left-0 w-[280px] h-[175px] md:w-[560px] md:h-[315px]">
+          <button onClick={onClose} className="cursor-pointer w-[39px] h-[39px] bg-white z-[100] text-center text-red-400 font-bold border-red-600 rounded-full md:p-2">
+            x
+          </button>
+          <iframe className="w-full h-full" title="YouTube Video" src={embedUrl} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
         </div>
       </div>
     </div>
@@ -73,7 +73,7 @@ function DetailMovieComponent() {
       <div className="absolute z-10 top-20 left-0 w-full h-[200px] md:h-[500px] bg-black opacity-80"></div>
       <img src={IMAGE_BASE_URL + detail.backdrop_path} className="w-full h-[200px] md:h-[500px] object-cover object-left-top" alt={detail.title} />
       <div className="grid grid-cols-4 gap-4 absolute top-12 mx-auto z-10 h-[100%]">
-        <img src={IMAGE_BASE_URL + detail.poster_path} className="w-[260px] ms-2 md:ms-11 mt-[55px] md:mt-[18%] rounded-lg object-cover" alt={detail.title} />
+        <img src={IMAGE_BASE_URL + detail.poster_path} className="w-[260px] ms-2 md:ms-5 lg:ms-5 mt-[55px] md:mt-[18%] rounded-lg object-cover" alt={detail.title} />
         <div className="col-span-2 pt-10">
           <h1 className="text-[15px] md:text-[50px]">{detail.title}</h1>
           <p className="text-[10px] md:text-[30px]">{detail.tagline}</p>
@@ -101,14 +101,15 @@ function DetailMovieComponent() {
               ))}
             </ul>
           )}
-          <p className="absolute me-5 z-[10] text-justify md:text-[16px] text-[6px]">{detail.overview}</p>
+          <p className="absolute me-5 text-justify md:text-[16px] text-[6px]">{detail.overview}</p>
           {/* Button to play the trailer */}
 
-          <div className="absolute top-[6%] left-[2%] md:left-[25%] z-[99]">{isModalOpen && <EmbeddedVideoModal embedUrl={`https://www.youtube.com/embed/${videoKey}`} onClose={handleCloseModal} />}</div>
+          <div>{isModalOpen && <EmbeddedVideoModal embedUrl={`https://www.youtube.com/embed/${videoKey}`} onClose={handleCloseModal} />}</div>
+
           {/* Embedded video modal */}
         </div>
       </div>
-      <div className="relative z-20 w-full h-full">
+      <div className="relative z-10 w-full h-full">
         <GenreMovieList />
       </div>
     </div>
